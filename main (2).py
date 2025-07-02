@@ -32,7 +32,12 @@ async def on_message(message):
     if message.content == "哈囉":
         await message.channel.send("哈囉寶寶，歡迎來到錚錚子的窩!")
 
-    elif message.content == "願懷":
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+        
+    if message.content == "願懷":
         answers = [
             "怎麼了小寶？",
             "小寶想我嗎？",
